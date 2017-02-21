@@ -1,6 +1,7 @@
 FROM mysql/mysql-server:5.7
 
-RUN yum -y update && yum -y install cronie
+#RUN yum -y update
+RUN yum -y install cronie
 
 ADD start.sh /
 RUN chmod 755 /start.sh
