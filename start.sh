@@ -1,8 +1,8 @@
 #!/bin/bash
-cat <<EOF > /etc/cron.d/mysqldump
+cat <<EOF > /etc/crontab/mysqldump
 $CRON_EXPR root /mysqldump.sh >> /var/log/cron.log 2>&1
 EOF
-chmod 0644 /etc/cron.d/mysqldump
+chmod 0644 /etc/crontab/mysqldump
 
 cat <<EOF > /mysqldump.sh
 #!/bin/bash
