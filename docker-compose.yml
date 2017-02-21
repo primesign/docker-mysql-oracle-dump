@@ -1,0 +1,17 @@
+version: '2'
+services:
+  db-backup:
+    env_file: .env
+    image: primesign/mysql-oracle-dump:5.7
+    restart: unless-stopped
+    volumes:
+      - "./mysql-backup:/mysql-backup"
+      - "/var/opt/mysql-gr/data:/var/lib/mysql:z"
+      - "/var/opt/mysql-oracle-dump/log:/var/log"
+    networks:
+      cluster:
+
+networks:
+  cluster:
+    external:
+      name: zzzmysqlgr_cluster

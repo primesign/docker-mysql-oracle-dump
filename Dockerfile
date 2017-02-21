@@ -1,6 +1,6 @@
 FROM mysql/mysql-server:5.7
 
-RUN apt-get update && apt-get install -y cron
+RUN yum -y update && yum -y install cronie
 
 ADD start.sh /
 RUN chmod 755 /start.sh
